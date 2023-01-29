@@ -25,7 +25,7 @@ class Game {
         let row = [];
         let random = Math.floor(Math.random() * 5);
         for (let i = 0; i < 5; i++) {
-            let box = new Box(`hsl(${360 * this.rainBowIndex / this.maxRainBow}, 80%, 50%)`, 0);
+            let box = new Box(`hsl(${360 * this.rainBowIndex / this.maxRainBow}, 80%, 50%)`, 0, this.timer);
             row.push(box);
         }
         this.rainBowIndex++;
@@ -125,7 +125,10 @@ class Game {
         this.startState = false;
         this.lastRowRevealed = this.lastRowMaxGenerated;
         this.fastReveal();
-        this.enableButton();
+        this.showError();
+        setTimeout(() => {
+            this.enableButton();
+        }, this.timer);
     }
     levelUp() {
         this.level++;
@@ -134,6 +137,15 @@ class Game {
     errorUp() {
         this.error++;
         document.getElementById('error').innerHTML = this.error;
+    }
+    showError() {
+        for (let i = this.lastRowMaxGenerated; i < this.board.length; i++) {
+            for (let j = 0; j < this.board[i].length; j++) {
+                if (this.board[i][j].state == 1) {
+                    this.board[i][j].error();
+                }
+            }
+        }
     }
     clearBoard() {
         this.board = [];
