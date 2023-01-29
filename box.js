@@ -4,6 +4,7 @@ class Box {
         this.state = state;
         this.row = row;
         this.timer = timer;
+        this.crossState = false;
         this.box = this.init();
         this.startState = false;
         this.visibleState = false;
@@ -31,8 +32,20 @@ class Box {
             this.visible();
             game.checker(true);
         } else if (this.state == 0 && this.startState) {
+            if (!this.crossState) {
+                this.cross();
+            }
             game.checker(false);
         }
+    }
+    cross() {
+        this.crossState = true;
+        let bar1 = document.createElement('div');
+        let bar2 = document.createElement('div');
+        bar1.style.transform = "translate(-50%, -50%) rotate(45deg)";
+        bar2.style.transform = "translate(-50%, -50%) rotate(-45deg)";
+        this.box.appendChild(bar1);
+        this.box.appendChild(bar2);
     }
     error() {
         this.startState = false;

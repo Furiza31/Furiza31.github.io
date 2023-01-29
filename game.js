@@ -50,6 +50,7 @@ class Game {
         }
         for (let i = this.lastRowRevealed; i < this.board.length; i++) {
             for (let j = 0; j < this.board[i].length; j++) {
+                this.board[i][j].startState = false;
                 setTimeout(() => {
                     if (this.board[i][j].state == 1) {
                         this.board[i][j].visible();
@@ -66,6 +67,7 @@ class Game {
         window.scrollTo(0, this.board[this.lastRowRevealed][0].box.offsetTop);
         for (let i = this.lastRowRevealed; i < this.board.length; i++) {
             for (let j = 0; j < this.board[i].length; j++) {
+                this.board[i][j].startState = false;
                 if (this.board[i][j].state == 1) {
                     this.board[i][j].visible();
                 } else {
