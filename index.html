@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./box.js" defer></script>
     <script src="./game.js" defer></script>
+    <script src="./tuto.js" defer></script>
 </head>
 
 <body>
@@ -27,6 +28,29 @@
 
     <main>
         <section id="game-board"></section>
+        <div id="tuto">
+            <h1>
+                ❤️ <span style="color: hsl(calc(360 * 0 / 8), 80%, 50%);">C</span>
+                <span style="color: hsl(calc(360 * 1 / 8), 80%, 50%);">O</span>
+                <span style="color: hsl(calc(360 * 2 / 8), 80%, 50%);">L</span>
+                <span style="color: hsl(calc(360 * 3 / 8), 80%, 50%);">O</span>
+                <span style="color: hsl(calc(360 * 4 / 8), 80%, 50%);">R</span>
+                <span style="color: hsl(calc(360 * 5 / 8), 80%, 50%);">I</span>
+                <span style="color: hsl(calc(360 * 6 / 8), 80%, 50%);">N</span>
+                <span style="color: hsl(calc(360 * 7 / 8), 80%, 50%);">E</span> ❤️
+            </h1>
+            <p>
+                Le but du jeu est de mémoriser l'emplacement des cases de couleurs. Une fois celles-ci mémorisées, vous avez plus qu'à appuyer sur le bouton <span>Mémorisé</span>.
+            </p>
+            <p>
+                Par la suite, ces cases vont disparaitre et vous devrez les retrouver en cliquant dessus.
+            </p>
+            <ul>
+                <li>Si vous vous trompez, vous devez recommencer.</li>
+                <li>Si vous réussissez, vous passez à l'étape suivante.</li>
+            </ul>
+            <button onclick="tuto();">Commencer</button>
+        </div>
     </main>
 
 </body>
