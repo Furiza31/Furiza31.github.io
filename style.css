@@ -121,6 +121,7 @@ main div#tuto {
     max-width: 500px;
     font-size: 20px;
     box-shadow: 1px 1px 10px black;
+    border: 1px solid black;
 }
 
 main div#tuto h1 {
@@ -182,5 +183,8 @@ main div#tuto button {
     }
     * {
         font-size: 4.5vw;
+    }
+    main div#tuto {
+        width: 90%;
     }
 }
