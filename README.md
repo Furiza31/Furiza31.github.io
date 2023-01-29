@@ -1,2 +1,2 @@
-# furiza.github.io
+# Colorine
 A very cool memory game
